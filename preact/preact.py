@@ -31,15 +31,14 @@ class Manager:
         wdir = os.path.abspath(os.getcwd())
         fdir = sys.path[0]
         dir = os.path.join(wdir, self.name)
-        print(dir)
         os.mkdir(dir)
         f = open(os.path.join(dir, "index.tsx"), "w+")
         r = open(os.path.join(fdir, "presets/index.tsx"))
         for line in r:
             uppername = self.name[0].upper() + self.name[1:]
-            l = line.replace("Name", uppername)
-            l = line.replace("name", self.name)
-            f.write(l)
+            line = line.replace("Name", uppername)
+            line = line.replace("name", self.name)
+            f.write(line)
         f.close()
         r.close()
         f = open(os.path.join(dir, "style.css"), "w+")
@@ -60,9 +59,9 @@ class Manager:
         r = open(os.path.join(fdir, "presets/index.tsx"))
         for line in r:
             uppername = self.name[0].upper() + self.name[1:]
-            l = line.replace("name", self.name)
-            l = line.replace("Name", uppername)
-            f.write(l)
+            line = line.replace("name", self.name)
+            line = line.replace("Name", uppername)
+            f.write(line)
         f.close()
         r.close()
 
@@ -75,9 +74,9 @@ class Manager:
         r = open(os.path.join(fdir, "presets/index.stories.tsx"))
         for line in r:
             uppername = self.name[0].upper() + self.name[1:]
-            l = line.replace("name", self.name)
-            l = line.replace("Name", uppername)
-            f.write(l)
+            line = line.replace("name", self.name)
+            line = line.replace("Name", uppername)
+            f.write(line)
         f.close()
         r.close()
 
